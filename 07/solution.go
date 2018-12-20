@@ -40,7 +40,7 @@ func (g *graph) Add(beforeID string, afterID string) {
 	// if we're an after step we can't be a head step.
 	delete(g.heads, astep.id)
 
-	// bstep.children = append(bstep.children, astep)
+	// link them together
 	bstep.AddChild(astep)
 	astep.AddParent(bstep)
 }
